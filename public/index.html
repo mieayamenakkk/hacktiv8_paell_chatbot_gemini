@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora TravelBot</title>
+    <!-- Font Inter untuk Brand -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="hero-wrapper">
+        <!-- Background Image -->
+        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1600&q=80" alt="Highway view" class="hero-bg">
+
+        <!-- Top Navigation -->
+        <nav class="top-nav">
+            <div class="logo">Aurora TravelBot</div>
+            <div class="nav-links">
+                <a href="#">Explore</a>
+                <a href="#">Trips</a>
+                <a href="#">About Us</a>
+                <a href="#">Safety</a>
+            </div>
+        </nav>
+
+        <!-- Huge Display Text -->
+        <div class="hero-content">
+            <h1 class="text-hero">
+                The future<br>
+                of travel is<br>
+                personal.
+            </h1>
+        </div>
+
+        <!-- Floating Chatbot Card (Phone Chat UI) -->
+        <div class="experience-card">
+            
+            <!-- Chat Header -->
+            <div class="chat-header">
+                <div class="ai-badge">✦ AI Assistant</div>
+                <span class="eyebrow-label">TravelBot Assistant</span>
+                <h2 class="card-title">Rencanakan Perjalananmu</h2>
+            </div>
+            
+            <!-- Chat History Area -->
+            <div class="chat-history" id="chatHistory">
+                <!-- Pesan pembuka dari Bot -->
+                <div class="chat-message bot">
+                    <div class="chat-bubble">
+                        Halo! Mau jalan-jalan ke mana kita hari ini?
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Input Area -->
+            <div class="chat-input-container">
+                <div class="chat-input-box">
+                    <input type="text" id="chatInput" placeholder="Ketik pesan (contoh: di Bali ada apa?)" autocomplete="off">
+                    <button id="btnSend" class="btn-circular" title="Kirim Pesan">&rarr;</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat-item">250K+ PLANNED TRIPS</div>
+            <div class="stat-item">10K+ DESTINATIONS</div>
+            <div class="stat-item">98% ON-TRIP SATISFACTION</div>
+            <div class="stat-item">AS OF OCTOBER 2026</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

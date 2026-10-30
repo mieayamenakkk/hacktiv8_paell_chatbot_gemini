@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  /* Aurora Theme */
+  --color-horizon-navy: #001733;
+  --color-slate-whisper: #68748d;
+  --color-mist: #e6e9f0;
+  --color-paper-white: #ffffff;
+  --font-inter: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  
+  /* iPhone iOS Colors */
+  --ios-blue: #007AFF;
+  --ios-gray: #E9E9EB;
+  --ios-bg: #FAFAFA;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-inter);
+  background-color: var(--color-paper-white);
+  color: var(--color-horizon-navy);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- HERO & LAYOUT --- */
+.hero-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 750px;
+  background-color: var(--color-horizon-navy);
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.top-nav {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 72px;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0 44px; z-index: 10;
+}
+
+.logo { font-size: 20px; font-weight: 600; color: var(--color-paper-white); }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a { text-decoration: none; color: var(--color-paper-white); font-size: 14px; font-weight: 500; opacity: 0.9; }
+.nav-links a:hover { opacity: 1; }
+
+.hero-content { position: absolute; bottom: 20%; left: 44px; z-index: 10; }
+.text-hero { font-size: 90px; line-height: 0.96; letter-spacing: -3.6px; font-weight: 500; color: var(--color-paper-white); }
+
+/* --- CARD CONTAINER --- */
+.experience-card {
+  position: absolute;
+  top: 90px; bottom: 80px; right: 44px;
+  width: 400px;
+  background: var(--color-paper-white);
+  border-radius: 8px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  padding: 24px;
+  border-bottom: 1px solid var(--color-mist);
+  position: relative;
+}
+
+.ai-badge {
+  position: absolute;
+  top: 24px; right: 24px;
+  background: var(--ios-bg);
+  color: var(--color-horizon-navy);
+  font-size: 12px; font-weight: 500;
+  padding: 4px 8px; border-radius: 4px;
+}
+
+.eyebrow-label {
+  font-size: 10px; font-weight: 500; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--color-slate-whisper);
+  margin-bottom: 8px; display: block;
+}
+
+.card-title { font-size: 20px; font-weight: 500; color: var(--color-horizon-navy); }
+
+/* --- IPHONE CHAT BUBBLES --- */
+.chat-history {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: var(--color-paper-white);
+}
+
+.chat-message { 
+  display: flex; 
+  flex-direction: column; 
+  max-width: 80%; 
+}
+
+.chat-message.bot { align-self: flex-start; }
+.chat-message.user { align-self: flex-end; }
+
+.chat-bubble {
+  padding: 10px 16px;
+  font-size: 15px;
+  line-height: 1.4;
+  border-radius: 18px; /* Bentuk membulat ala iOS */
+  word-wrap: break-word;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Warna Abu-abu iOS untuk Bot */
+.bot .chat-bubble {
+  background-color: var(--ios-gray);
+  color: #000;
+  border-bottom-left-radius: 4px; /* Ekor kiri bawah */
+}
+
+/* Warna Biru iOS untuk User */
+.user .chat-bubble {
+  background-color: var(--ios-blue);
+  color: #fff;
+  border-bottom-right-radius: 4px; /* Ekor kanan bawah */
+}
+
+/* Format teks di dalam bubble bot */
+.bot .chat-bubble b { display: block; margin-top: 8px; font-size: 16px; }
+.bot .chat-bubble i { font-size: 14px; color: #444; }
+
+/* --- IPHONE CHAT INPUT --- */
+.chat-input-container {
+  padding: 12px 16px;
+  border-top: 1px solid var(--color-mist);
+  background-color: var(--color-paper-white);
+  border-radius: 0 0 8px 8px;
+}
+
+.chat-input-box {
+  display: flex;
+  align-items: center;
+  background-color: var(--ios-bg);
+  border-radius: 20px;
+  padding: 4px 4px 4px 16px;
+  border: 1px solid var(--color-mist);
+}
+
+.chat-input-box input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  color: #000;
+}
+
+.chat-input-box input::placeholder { color: #8E8E93; }
+
+.btn-circular {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--ios-blue);
+  color: #fff;
+  border: none; 
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 16px; font-weight: bold;
+}
+.btn-circular:disabled { background: #A1CFFF; cursor: not-allowed; }
+
+/* --- STATS BAR --- */
+.stats-bar {
+  position: absolute; bottom: 0; left: 0; width: 100%;
+  display: flex; border-top: 1px solid rgba(255, 255, 255, 0.15); z-index: 10;
+}
+.stat-item {
+  flex: 1; padding: 20px 44px; border-right: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-paper-white);
+}
+.stat-item:last-child { border-right: none; }
